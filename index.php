@@ -17,7 +17,8 @@
 // should install libreoffice to convert word,ppt to pdf files
 // sudo apt-get install libreoffice --no-install-recommends
 //
-// document should be in main folder except ppt files should be in pptx folder
+// document should be in main folder except testpptx files should be in pptx folder
+// Exported files should be in pdf folder
 
 $file = $_GET['filename']; // file
 
@@ -45,10 +46,10 @@ function documentPreview($file, $precent) {
             splitPdf($file . ".pdf", 'pdf/', $precent);
             break;
         case 'pptx':
+        case 'ppt':
             exec('libreoffice --headless --invisible --convert-to pdf output.pdf testpptx/' . $file);
             $file = substr($file, 0, strrpos($file, "."));
             splitPdf($file . ".pdf", 'pdf/', $precent);
-            
             break;
         case 'xlsx':
         case 'xls':
