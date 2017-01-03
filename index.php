@@ -16,6 +16,8 @@
 // sudo apt-get install imagemagick
 // should install libreoffice to convert word,ppt to pdf files
 // sudo apt-get install libreoffice --no-install-recommends
+//
+// document should be in main folder except ppt files should be in pptx folder
 
 $file = $_GET['filename']; // file
 
